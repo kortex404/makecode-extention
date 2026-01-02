@@ -1,0 +1,23 @@
+{
+    "name": "kortex404-makecode-extention",
+    "version": "0.0.1",
+    "description": "An extension for MakeCode Arcade",
+    "dependencies": {
+        "core": "*",
+        "arcade": "github:microsoft/arcade#v1.*"
+    },
+    "files": [
+        "main.ts",
+        "README.md",
+        "ui.ts"
+    ],
+    "testFiles": [],
+    "targetVersions": {
+        "target": "1.12.55",
+        "targetId": "arcade"
+    },
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "tsprj"
+}

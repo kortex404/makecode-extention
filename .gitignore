@@ -1,0 +1,16 @@
+built/
+node_modules/
+pxt_modules/
+*.db
+*.js
+*.js.map
+*.json.bak
+*.log
+*.lock
+*.pyc
+*.swp
+.DS_Store
+.embed.jres
+.header.jres
+.uf2
+thumb.png
