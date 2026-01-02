@@ -92,16 +92,19 @@ namespace kortex404Extension {
 
                 let currentX = contentX;
                 if (typeof this.label === "string") {
-                    this.printWithOutline(newImage, this.label, currentX, contentY, textColor, this.options.outlineColor);
+                    const labelY = contentY + (contentHeight - labelHeight) / 2;
+                    this.printWithOutline(newImage, this.label, currentX, labelY, textColor, this.options.outlineColor);
                     currentX += labelWidth;
                 } else {
-                    newImage.drawTransparentImage(this.label, currentX, contentY);
+                    const labelY = contentY + (contentHeight - labelHeight) / 2;
+                    newImage.drawTransparentImage(this.label, currentX, labelY);
                     currentX += labelWidth;
                 }
 
                 currentX += spacing;
 
-                this.printWithOutline(newImage, valueText, currentX, contentY, textColor, this.options.outlineColor);
+                const valueY = contentY + (contentHeight - this.font.charHeight) / 2;
+                this.printWithOutline(newImage, valueText, currentX, valueY, textColor, this.options.outlineColor);
 
                 this.sprite.setImage(newImage);
             }
