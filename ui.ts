@@ -10,17 +10,17 @@ namespace kortex404Extension {
             textColor?: number;
             outlineColor?: number;
             backgroundColor?: number;
-            backgroundImage?: image.Image;
+            backgroundImage?: Image;
         }
 
         export class Counter {
             private sprite: Sprite;
-            private label: string | image.Image;
+            private label: string | Image;
             private _value: number;
             private options: CounterOptions;
             private font: image.Font = image.font5;
 
-            constructor(label: string | image.Image, value: number, options: CounterOptions) {
+            constructor(label: string | Image, value: number, options: CounterOptions) {
                 this.label = label;
                 this._value = value;
                 this.options = options;
@@ -106,7 +106,7 @@ namespace kortex404Extension {
                 this.sprite.setImage(newImage);
             }
 
-            private printWithOutline(onImage: image.Image, text: string, x: number, y: number, color: number, outline?: number) {
+            private printWithOutline(onImage: Image, text: string, x: number, y: number, color: number, outline?: number) {
                 if (outline !== undefined) {
                     const o = outline;
                     onImage.print(text, x - 1, y - 1, o, this.font);
@@ -133,7 +133,7 @@ namespace kortex404Extension {
         //% outlineColor.shadow=colorindexpicker
         //% bgColor.shadow=colorindexpicker
         //% bgImage.shadow=screen_image_picker
-        export function createTextCounter(text: string, value: number, x?: number, y?: number, width?: number, height?: number, textColor?: number, outlineColor?: number, bgColor?: number, bgImage?: image.Image): Counter {
+        export function createTextCounter(text: string, value: number, x?: number, y?: number, width?: number, height?: number, textColor?: number, outlineColor?: number, bgColor?: number, bgImage?: Image): Counter {
             return new Counter(text, value, { x, y, width, height, textColor, outlineColor, backgroundColor: bgColor, backgroundImage: bgImage });
         }
 
@@ -152,7 +152,7 @@ namespace kortex404Extension {
         //% outlineColor.shadow=colorindexpicker
         //% bgColor.shadow=colorindexpicker
         //% bgImage.shadow=screen_image_picker
-        export function createImageCounter(icon: image.Image, value: number, x?: number, y?: number, width?: number, height?: number, textColor?: number, outlineColor?: number, bgColor?: number, bgImage?: image.Image): Counter {
+        export function createImageCounter(icon: Image, value: number, x?: number, y?: number, width?: number, height?: number, textColor?: number, outlineColor?: number, bgColor?: number, bgImage?: Image): Counter {
             return new Counter(icon, value, { x, y, width, height, textColor, outlineColor, backgroundColor: bgColor, backgroundImage: bgImage });
         }
 
